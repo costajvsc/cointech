@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@300;400;700&display=swap');@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root{
+    --green: #37AF3E;
+    --yellow: #F79D1B;
+    --blue: #24346C;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif
+}
+
+label{
+    margin-bottom: 0;
+}
+
+.inc-exp-container {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: var(--green);
+}
+
+.money.minus {
+    color: var(--yellow);
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+.transactions {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.transactions li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.transactions li.plus {
+    border-right: .75em solid var(--green);
+}
+
+.transactions li.minus {
+    border-right: .75em solid var(--yellow);
+}
+
+.wrap-options{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+}
+
+.btn-option {
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: .3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.btn-delete{
+    background-color: var(--yellow);
+}
+.btn-edit {
+    background-color: var(--blue);
+    color: white
+}
+.btn-edit:hover {
+    background-color: var(--yellow);
+    color: white
+}
+
+
+.transactions li:hover .btn-option {
+    opacity: 1;
+}
+
+#budgets .btn {
+    opacity: 0;
+}
+
+#budgets li:hover .btn {
+    opacity: 1;
+}
+
+.list-social-networks{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.item-social-network{
+    margin: 0 .5rem;
+}
+.item-social-network a{
+    color: var(--blue);
+}
+
+.item-social-network a:hover {
+    color: var(--yellow) !important;
+}
+.item-social-network a:active{
+    color: var(--green);
+}
+.item-social-network a:visited{
+    color: var(--blue);
+}
