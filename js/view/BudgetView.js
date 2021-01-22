@@ -2,7 +2,8 @@ const budgetsUL = document.querySelector('#budgets')
 
 const renderBudget = () =>  {
     budgetsUL.innerHTML = ''
-    budgets.forEach(budget => {
+
+    handleGetBudgets().map(budget => {
         const li = document.createElement('li')
         li.innerHTML = `
             <div class="d-flex justify-content-between">
@@ -19,7 +20,8 @@ const renderBudget = () =>  {
     })
         
     inputTranscationBudget.innerHTML = ''
-    budgets.map(budget => factoryOption(budget, budget, inputTranscationBudget))
+
+    handleGetBudgets().map(budget => factoryOption(budget, budget, inputTranscationBudget))
 }
 
 

@@ -14,7 +14,7 @@ const inputTranscationDateEdit = document.querySelector('#date-edit')
 const inputTranscationTypeEdit = document.querySelector('#type-edit')
 const inputTranscationCategoryEdit = document.querySelector('#category-edit')
 
-let transactions = getStorage("transactions")
+
 
 const handleFormAddTransaction   = event => {
     event.preventDefault()
@@ -31,14 +31,16 @@ const handleFormAddTransaction   = event => {
     const message = `A Trasação <strong>${name}</strong> foi inserida com sucesso.`
 
     createTrasaction(name, date, amount, type, category, budget)
-    setStorage('transactions', transactions)
+    
+    updateDatabase('transactions', transactions)
+    
     sendAlert('success', message)
     render()
 }
 
 const handleRemoveTransaction = id => {
     removeTransaction(id)
-    setStorage('transactions', transactions)
+    updateDatabase('transactions', transactions)
 
     const message = `A Trasação foi removida com sucesso.`
 
@@ -71,10 +73,13 @@ const handleFormEditTransaction = event => {
     const message = `A Trasação <strong>${name}</strong> foi atualizada com sucesso.`
 
     updateTrasaction(id, name, date, amount, type, category, budget)
-    setStorage('transactions', transactions)
+    updateDatabase('transactions', transactions)
     sendAlert('warming', message)
     render()
 }
+
+const handleTransactionsMonth = () => filterTransaction('budget', 'Dezembro (2020)')
+
 const clearFormTrasaction = () => {
     inputTranscationName.value = ''
     inputTranscationAmount.value = ''

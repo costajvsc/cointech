@@ -4,7 +4,7 @@ const inputTranscationBudgetAdd = document.querySelector('#budget-add')
 const inputTranscationBudget = document.querySelector('#budget')
 const inputTranscationBudgetEdit = document.querySelector('#budget-edit')
 
-let budgets = getStorage("budgets")
+
 
 const handleFormBudget = event => {
     event.preventDefault()
@@ -16,7 +16,7 @@ const handleFormBudget = event => {
     
     const message = `O orçamento <strong>${budgetName}</strong> foi inserido com sucesso.`
 
-    setStorage('budgets', budgets)
+    updateDatabase('budgets', budgets)
     sendAlert('success', message)
     render()
 }   
@@ -26,10 +26,14 @@ const handleRemoveBudget = (budget) => {
     
     const message = `O orçamento <strong>${budget}</strong> foi removido com sucesso.`
     
-    setStorage('budgets', budgets)
+    updateDatabase('budgets', budgets)
     sendAlert('danger', message)
     render()
 }
+
+const handleGetBudgets = () => getBudget()
+
+handleGetBudgets()
 
 formBudget.addEventListener('submit', handleFormBudget)
 spanBudgetAdd.addEventListener('click', renderBudget)
