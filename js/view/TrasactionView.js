@@ -11,7 +11,7 @@ const renderTransaction = () => {
         li.classList.add(CSSClass)
 
         li.innerHTML = `
-            <span onClick="showDetails('${transaction.id}')" class="d-flex justify-content-between">
+            <span class="d-flex justify-content-between">
                 <div>
                     <div>
                         <spam class="font-weight-bold">
