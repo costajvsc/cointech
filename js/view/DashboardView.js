@@ -3,7 +3,7 @@ const expenseDisplay = document.querySelector('#money-minus')
 const balanceDisplay = document.querySelector('#balance')
 
 const renderBalance = () => {
-    const transactionAmounts = getTransaction()
+    const transactionAmounts = filterTransaction('budget', 'Dezembro (2020)')
         .map(
             transaction => transaction.type === 'Entrada' 
             ? parseFloat(`${transaction.amount}`) 

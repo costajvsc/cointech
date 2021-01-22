@@ -29,9 +29,9 @@ const removeTransaction = ID =>{
     transactions = transactions.filter(transaction => transaction.id !== ID)
 }   
 
-const getTransaction = () => {
-    return transactions
-}
+const getTransactions = () => transactions
+
+const filterTransaction = (key, value) => transactions.filter(transaction => transaction[`${key}`] === value) 
 
 const findTransaction = (id) => {
     let transaction = transactions.filter(transaction => transaction.id === id)

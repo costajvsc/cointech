@@ -2,7 +2,7 @@ const transactionsUL = document.querySelector('#transactions')
 
 const renderTransaction = () => {
     transactionsUL.innerHTML = ''
-    transactions.map(transaction => {
+    filterTransaction('budget', 'Dezembro (2020)').map(transaction => {
         const operator = transaction.type === "Entrada" ? '+' : '-'
         const CSSClass = transaction.type === "Entrada" ? 'plus' : 'minus'
         const li = document.createElement('li')
