@@ -2,8 +2,19 @@ const incomeDisplay = document.querySelector('#money-plus')
 const expenseDisplay = document.querySelector('#money-minus')
 const balanceDisplay = document.querySelector('#balance')
 
-const renderBalance = () => {
-    const transactionAmounts = handleTransactionsMonth()
+const previousMonthDisplay = document.querySelector('[data-js=data-month-previous]')
+const currentMonthDisplay = document.querySelector('[data-js=data-month-current]')
+const nextMonthDisplay = document.querySelector('[data-js=data-month-next]')
+const settingsMonthDisplay = document.querySelector('[data-js=data-month-settings]')
+
+const renderMonthsDisplay = () => {
+    previousMonthDisplay.innerHTML = previousMonth
+    currentMonthDisplay.innerHTML = currentMonth
+    nextMonthDisplay.innerHTML = nextMonth
+}
+
+const renderBalance = (filterTransactions) => {
+    const transactionAmounts = filterTransactions
         .map(
             transaction => transaction.type === 'Entrada' 
             ? parseFloat(`${transaction.amount}`) 

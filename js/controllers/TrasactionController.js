@@ -15,7 +15,6 @@ const inputTranscationTypeEdit = document.querySelector('#type-edit')
 const inputTranscationCategoryEdit = document.querySelector('#category-edit')
 
 
-
 const handleFormAddTransaction   = event => {
     event.preventDefault()
 
@@ -35,7 +34,7 @@ const handleFormAddTransaction   = event => {
     updateDatabase('transactions', transactions)
     
     sendAlert('success', message)
-    render()
+    renderTransaction()
 }
 
 const handleRemoveTransaction = id => {
@@ -45,7 +44,7 @@ const handleRemoveTransaction = id => {
     const message = `A Trasação foi removida com sucesso.`
 
     sendAlert('danger', message)
-    render()
+    renderTransaction()
 } 
 
 const handleFindTransaction = id => {
@@ -74,11 +73,15 @@ const handleFormEditTransaction = event => {
 
     updateTrasaction(id, name, date, amount, type, category, budget)
     updateDatabase('transactions', transactions)
-    sendAlert('warming', message)
-    render()
+    sendAlert('warning', message)
+    renderTransaction()
+}
+var filterState
+const setFilterState = (state) => {
+    filterState = state
 }
 
-const handleTransactionsMonth = () => filterTransaction('budget', 'Dezembro (2020)')
+const getFilterTransactions = () => filterTransaction('budget', filterState)
 
 const clearFormTrasaction = () => {
     inputTranscationName.value = ''

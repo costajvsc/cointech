@@ -18,7 +18,7 @@ const handleFormBudget = event => {
 
     updateDatabase('budgets', budgets)
     sendAlert('success', message)
-    render()
+    renderBudgets()
 }   
 
 const handleRemoveBudget = (budget) => {
@@ -28,7 +28,7 @@ const handleRemoveBudget = (budget) => {
     
     updateDatabase('budgets', budgets)
     sendAlert('danger', message)
-    render()
+    renderBudgets()
 }
 
 const handleGetBudgets = () => getBudget()
@@ -36,4 +36,4 @@ const handleGetBudgets = () => getBudget()
 handleGetBudgets()
 
 formBudget.addEventListener('submit', handleFormBudget)
-spanBudgetAdd.addEventListener('click', renderBudget)
+spanBudgetAdd.addEventListener('click', renderBudgets)

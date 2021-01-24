@@ -108,6 +108,12 @@
                 <div class="d-flex justify-content-around">
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         <h1 class="text-center">Transações</h1>
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+                                <a class="nav-link" data-js="data-month-previous" role="button">Dezembro (2020)</a>
+                                <a class="nav-link" data-js="data-month-current" role="button">Janeiro (2021)</a>
+                                <a class="nav-link" data-js="data-month-next" role="button">Fevereiro (2021)</a>
+                                <a class="nav-link disabled" data-js="data-month-settings" role="button"><i class="fas fa-cog"></i></a>
+                        </nav>
                         <ul id="transactions" class="transactions"></ul>
                     </div>
                 </div>
@@ -254,6 +260,7 @@
     <script src="./js/view/TrasactionView.js"></script>
     
     <script src="./js/controllers/BudgetController.js"></script>
+    <script src="./js/controllers/DashboardController.js"></script>
     <script src="./js/controllers/TrasactionController.js"></script>
 
     <script src="js/app.js"></script>

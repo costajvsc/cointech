@@ -1,6 +1,6 @@
 const budgetsUL = document.querySelector('#budgets')
 
-const renderBudget = () =>  {
+const renderListBudget = () =>  {
     budgetsUL.innerHTML = ''
 
     handleGetBudgets().map(budget => {
@@ -18,10 +18,27 @@ const renderBudget = () =>  {
         li.classList.add('list-group-item')
         budgetsUL.appendChild(li)
     })
-        
-    inputTranscationBudget.innerHTML = ''
-
-    handleGetBudgets().map(budget => factoryOption(budget, budget, inputTranscationBudget))
 }
 
+const renderBudgetOptions = () => {
+    
+    inputTranscationBudget.innerHTML = ''
+    inputTranscationBudgetEdit.innerHTML = ''
 
+    handleGetBudgets().map(budget => factoryOption(budget, budget, inputTranscationBudget))
+    handleGetBudgets().map(budget => factoryOption(budget, budget, inputTranscationBudgetEdit))
+
+    factoryOption(previousMonth, previousMonth, inputTranscationBudget)
+    factoryOption(currentMonth, currentMonth, inputTranscationBudget)
+    factoryOption(nextMonth, nextMonth, inputTranscationBudget)
+
+    factoryOption(previousMonth, previousMonth, inputTranscationBudgetEdit)
+    factoryOption(currentMonth, currentMonth, inputTranscationBudgetEdit)
+    factoryOption(nextMonth, nextMonth, inputTranscationBudgetEdit)
+
+}
+
+const renderBudgets = () => {
+    renderListBudget()
+    renderBudgetOptions()
+}

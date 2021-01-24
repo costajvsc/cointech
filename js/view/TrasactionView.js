@@ -1,9 +1,9 @@
 const transactionsUL = document.querySelector('#transactions')
 
-const renderTransaction = () => {
+const renderListTransaction = (filterTransactions) => {
     transactionsUL.innerHTML = ''
     
-    handleTransactionsMonth().map(transaction => {
+    filterTransactions.map(transaction => {
         const operator = transaction.type === "Entrada" ? '+' : '-'
         const CSSClass = transaction.type === "Entrada" ? 'plus' : 'minus'
         const li = document.createElement('li')
@@ -53,6 +53,12 @@ const renderTransaction = () => {
     })
     
 }
+
+const renderTransaction = () => {
+    renderBalance(getFilterTransactions())
+    renderListTransaction(getFilterTransactions())
+}
+
 
 
 
