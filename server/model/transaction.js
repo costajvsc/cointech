@@ -1,15 +1,31 @@
-const user = {
-    _id: 1,
-    userId: 1,
-    title: '', 
-    amount: 0,
-    type: '',
-    category: '',
-    budget: '',
-    payment: '',
-    date: new Date(),
-    created_at: new Date(),
-    edited_at: new Date(),
+const repository = require('../database/repository/transactionDAO')
+
+class Transaction { 
+    list(){
+        return repository.list()
+    }
+
+    find(id){
+        return repository.find(id)
+    }
+
+    create(transaction){
+        // validate
+        // any thing else
+        // return a response
+        return repository.create(transaction)
+    }
+
+    update(id, transaction){
+        // validate
+        // any thing else
+        // return a response
+        return repository.update(id, transaction)
+    }
+
+    delete(id){
+        return repository.delete(id)
+    }
 }
 
-module.exports = user
+module.exports = new Transaction()
